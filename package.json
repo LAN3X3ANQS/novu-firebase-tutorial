@@ -1,0 +1,7 @@
+{
+  "name": "novu-firebase-demo",
+  "version": "1.0.0",
+  "dependencies": {
+    "@novu/node": "^0.24.0"
+  }
+}
