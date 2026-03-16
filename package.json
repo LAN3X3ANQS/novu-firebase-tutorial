@@ -1,6 +1,8 @@
 {
-  "name": "novu-firebase-demo",
+  "name": "novu-firebase-integration",
   "version": "1.0.0",
+  "description": "A tutorial project integrating Novu with Firebase Cloud Messaging",
+  "main": "index.js",
   "dependencies": {
     "@novu/node": "^0.24.0"
   }
