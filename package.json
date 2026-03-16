@@ -1,9 +1,28 @@
 {
-  "name": "novu-firebase-integration",
+  "name": "novu-firebase-fcm",
   "version": "1.0.0",
-  "description": "A tutorial project integrating Novu with Firebase Cloud Messaging",
+  "description": "A Node.js/Express backend that integrates Novu with Firebase Cloud Messaging (FCM) to send push notifications.",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "novu",
+    "firebase",
+    "fcm",
+    "push-notifications",
+    "node",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
-    "@novu/node": "^0.24.0"
+    "@novu/api": "^2.6.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }
