@@ -1,19 +1,19 @@
 const { Novu } = require('@novu/node');
 
-// This script triggers the notification through the Firebase setup you created
-const novu = new Novu('YOUR_NOVU_API_KEY');
+// Replace with your actual Novu API Key from the dashboard
+const novu = new Novu('<YOUR_NOVU_API_KEY>');
 
-async function testNotification() {
-  await novu.trigger('firebase-push-test', {
+const triggerNotification = async () => {
+  await novu.trigger('push-notification-workflow', {
     to: {
-      subscriberId: 'test-user-1',
+      subscriberId: 'subscriber_123',
     },
     payload: {
-      title: "It Works!",
-      body: "This message was sent via Firebase + Novu."
+      title: 'Hello from Novu!',
+      body: 'This push notification was sent via Firebase.',
     },
   });
-  console.log("Notification sent!");
-}
+  console.log('Notification triggered successfully;');
+};
 
-testNotification();
+triggerNotification();
