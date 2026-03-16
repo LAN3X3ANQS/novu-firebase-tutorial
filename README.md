@@ -4,7 +4,7 @@ A Node.js/Express backend that integrates [Novu](https://novu.co) with [Firebase
 
 ---
 
- Prerequisites
+## Prerequisites
 
 Before you start, make sure you have the following:
 
@@ -14,7 +14,7 @@ Before you start, make sure you have the following:
 
 ---
 
- Project Structure
+## Project Structure
 
 ```
 novu-firebase-fcm/
@@ -26,22 +26,22 @@ novu-firebase-fcm/
 
 ---
 
- Getting Started
+## Getting Started
 
- 1. Clone the repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/your-username/novu-firebase-fcm.git
 cd novu-firebase-fcm
 ```
 
- 2. Install dependencies
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
- 3. Set up environment variables
+### 3. Set up environment variables
 
 Copy the example env file and fill in your values:
 
@@ -59,14 +59,14 @@ PORT=3000
 
 > You can find your Novu Secret Key under **Settings > API Keys** in your [Novu dashboard](https://dashboard.novu.co).
 
- 4. Configure Firebase in Novu
+### 4. Configure Firebase in Novu
 
 1. Go to your [Firebase Console](https://console.firebase.google.com/) → **Project Settings** → **Service Accounts**.
 2. Click **Generate new private key** and download the JSON file.
 3. In your [Novu dashboard](https://dashboard.novu.co), go to **Integrations Store** and enable **Firebase Cloud Messaging**.
 4. Paste the entire contents of the downloaded JSON file into the **Service Account** field and save.
 
- 5. Create a Novu Workflow
+### 5. Create a Novu Workflow
 
 1. In your Novu dashboard, go to **Workflows** and click **Add a workflow**.
 2. Select **Blank Workflow**.
@@ -74,13 +74,13 @@ PORT=3000
 4. Set the **title** and **body** using variables: `{{title}}` and `{{body}}`.
 5. Save the workflow and copy the **trigger identifier** — this is your `NOVU_WORKFLOW_ID`.
 
- 6. Start the server
+### 6. Start the server
 
 ```bash
- Production
+# Production
 npm start
 
- Development (auto-restarts on file changes)
+# Development (auto-restarts on file changes)
 npm run dev
 ```
 
@@ -88,9 +88,9 @@ The server runs at `http://localhost:3000`.
 
 ---
 
- API Endpoints
+## API Endpoints
 
- `POST /register-subscriber`
+### `POST /register-subscriber`
 
 Creates a subscriber in Novu and saves their FCM device token.
 
@@ -120,7 +120,7 @@ curl -X POST http://localhost:3000/register-subscriber \
 
 ---
 
- `POST /send-notification`
+### `POST /send-notification`
 
 Triggers a push notification to a single subscriber.
 
@@ -148,7 +148,7 @@ curl -X POST http://localhost:3000/send-notification \
 
 ---
 
- `POST /send-notification-topic`
+### `POST /send-notification-topic`
 
 Broadcasts a push notification to an FCM topic (all devices subscribed to that topic).
 
@@ -178,7 +178,7 @@ curl -X POST http://localhost:3000/send-notification-topic \
 
 ---
 
- How It Works
+## How It Works
 
 1. **Your client app** (web or mobile) requests an FCM device token from Firebase.
 2. **Your client** sends that token to your backend via `POST /register-subscriber`.
@@ -189,7 +189,7 @@ curl -X POST http://localhost:3000/send-notification-topic \
 
 ---
 
- Resources
+## Resources
 
 - [Novu Documentation](https://docs.novu.co)
 - [Novu FCM Integration Guide](https://docs.novu.co/platform/integrations/push/fcm)
